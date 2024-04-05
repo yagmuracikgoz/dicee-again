@@ -1,7 +1,7 @@
-if (window.performance.navigation.type === 1) {
+if (performance.getEntriesByType("navigation")[1].type === "reload") {
     rollDice();
 }
-
+function rollDice(){
 let randomNumber1= Math.floor(Math.random()*6)+1;
 
 let randomNumber2= Math.floor(Math.random()*6)+1;
@@ -21,4 +21,5 @@ else if(randomNumber1 < randomNumber2){
 }
 else if(randomNumber1 === randomNumber2){
     document.querySelector("h1").innerHTML="DRAW! Try Again.";
+}
 }
